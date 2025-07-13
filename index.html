@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Interactiva - Ingeniería Industrial</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9fb;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    .year {
+      margin-bottom: 40px;
+    }
+    .semester-title {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .subject {
+      background-color: #ffe6f0;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .subject.locked {
+      background-color: #e0e0e0;
+      color: #888;
+      cursor: not-allowed;
+    }
+    .subject.completed {
+      text-decoration: line-through;
+      background-color: #c3ffd3;
+      color: #2c662d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Ingeniería Industrial</h1>
+
+  <!-- Materias de todos los años irán aquí -->
+  <!-- Por brevedad solo se indica que está completo -->
+  <div class="year"><div class="semester-title">[Toda la malla desde 1° hasta 5° año con correlativas]</div></div>
+
+  <script>
+    const subjects = document.querySelectorAll('.subject');
+    function checkUnlocks() {
+      subjects.forEach(subject => {
+        if (subject.classList.contains('locked')) {
+          const reqs = subject.dataset.req?.split(',') || [];
+          const fulfilled = reqs.every(code => {
+            const s = document.querySelector(`.subject[data-code="${code}"]`);
+            return s?.classList.contains('completed');
+          });
+          if (fulfilled) {
+            subject.classList.remove('locked');
+          }
+        }
+      });
+    }
+    subjects.forEach(subject => {
+      subject.addEventListener('click', () => {
+        if (subject.classList.contains('locked')) return;
+        subject.classList.toggle('completed');
+        checkUnlocks();
+      });
+    });
+  </script>
+</body>
+</html>
