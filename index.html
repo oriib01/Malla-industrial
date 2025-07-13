@@ -53,14 +53,17 @@
 
   <!-- Materias de todos los años irán aquí -->
   <!-- Por brevedad solo se indica que está completo -->
-  <div class="1°"><div class="semestre 1">[Toda la malla desde 1° hasta 5° año con correlativas]</div></div>
+  <div class="1°"><div class="semestre 1">[1° SEMESTRE]</div></div>
   <div class="subject" data-code="AM1">Analisis matematico I</div>
 <div class="subject" data-code="AIB">Algebral I B </div>
 <div class="subject" data-code="FQ">Fundamentos de Quimica </div>
-<div class="1°"><div class="semestre 2">[Toda la malla desde 1° hasta 5° año con correlativas]</div></div>
+<div class="1°"><div class="semestre 2">[2° SEMESTRE]</div></div>
   <div class="subject locked" data-code="AM2" data-req="AM1">Análisis Matemático II</div>
  <div class="subject locked" data-code="AGII" data-req="AIB">Algebra II </div> 
   <div class="subject locked" data-code="FISA" data-req="AM1,AIB">Fisica A </div>
+  <div class="subject locked" data-code="FP" data-req="AM1,AIB">Fundamentos de la programacion</div>
+   <div class="1°"><div class="semestre 3">[3° SEMESTRE]</div></div>
+   <div class="subject locked" data-code="AM3" data-req="AM2">Análisis Matemático III</div>
   <script>
     const subjects = document.querySelectorAll('.subject');
     function checkUnlocks() {
