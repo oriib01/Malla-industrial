@@ -49,21 +49,25 @@
   </style>
 </head>
 <body>
-  <h1>Malla Interactiva - Ingeniería Industrial</h1>
+  <h1> Ingeniería Industrial</h1>
 
   <!-- Materias de todos los años irán aquí -->
   <!-- Por brevedad solo se indica que está completo -->
-  <div class="1°"><div class="semestre 1">[1° SEMESTRE]</div></div>
+  <div class="1°"><div class="semestre 1">1° SEMESTRE</div></div>
   <div class="subject" data-code="AM1">Analisis matematico I</div>
 <div class="subject" data-code="AIB">Algebral I B </div>
 <div class="subject" data-code="FQ">Fundamentos de Quimica </div>
-<div class="1°"><div class="semestre 2">[2° SEMESTRE]</div></div>
+<div class="1°"><div class="semestre 2">2° SEMESTRE</div></div>
   <div class="subject locked" data-code="AM2" data-req="AM1">Análisis Matemático II</div>
  <div class="subject locked" data-code="AGII" data-req="AIB">Algebra II </div> 
   <div class="subject locked" data-code="FISA" data-req="AM1,AIB">Fisica A </div>
   <div class="subject locked" data-code="FP" data-req="AM1,AIB">Fundamentos de la programacion</div>
-   <div class="1°"><div class="semestre 3">[3° SEMESTRE]</div></div>
+   <div class="1°"><div class="semestre 3">3° SEMESTRE</div></div>
    <div class="subject locked" data-code="AM3" data-req="AM2">Análisis Matemático III</div>
+  <div class="subject locked" data-code="PyE" data-req="AM2">Probabilidad y Estadistica</div>
+  <div class="subject locked" data-code="MdS" data-req="FISA">Mecanica del solido</div>
+  <div class="subject locked" data-code="FBII" data-req="FISA">Fisica B-II</div>
+  <div class="subject locked" data-code="ING" >Ingles I</div>
   <script>
     const subjects = document.querySelectorAll('.subject');
     function checkUnlocks() {
